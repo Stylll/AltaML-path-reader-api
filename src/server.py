@@ -2,12 +2,12 @@ import flask
 
 from flask import jsonify, request
 from flask_cors import CORS
-from errors import getMissingQueryError, getServerError, getOsError
-from utils import readFile, generateDirections
+from src.errors import getMissingQueryError, getServerError, getOsError
+from src.utils import readFile, generateDirections
 
 app = flask.Flask(__name__)
 CORS(app)
-app.config['DEBUG'] = True
+# app.config['DEBUG'] = True
 
 @app.route('/api/v1/directions', methods=['GET'])
 def directions():
